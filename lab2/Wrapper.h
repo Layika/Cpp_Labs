@@ -1,5 +1,9 @@
 #pragma once
 
-class Wrapper {
+class PVec;
 
+class Wrapper {
+  
+public:
+  virtual void push_back(PVec* elem);
 };

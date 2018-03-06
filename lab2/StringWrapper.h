@@ -3,9 +3,11 @@
 #include "Wrapper.h"
 
 class StringWrapper : public Wrapper {
-private:
-  std::string str;
 
 public:
   StringWrapper(std::string str) : str(str) {}
+  virtual void push_back(StringWrapper* s);
+
+private:
+  std::string str;
 };
