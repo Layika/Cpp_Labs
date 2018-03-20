@@ -11,10 +11,11 @@ int main() {
   PVec a;
   PVec b;
 
-  b.push_back(new IntWrapper(54))
-   .push_back(new IntWrapper(14))
-   .push_back(new IntWrapper(-76));
-/*
+  b.pushBack(new IntWrapper(54))
+   .pushBack(new IntWrapper(14))
+   .pushBack(new IntWrapper(-76));
+
+
   std::cout << b << std::endl;
 
   a << new IntWrapper(45);
@@ -27,7 +28,7 @@ int main() {
 
   std::cout << "\n";
   a[2].print(std::cout);
-  std::cout << "\n";*/
+  std::cout << "\n";
 }
 /* wynik
  54 14 -76

@@ -1,12 +1,11 @@
 #pragma once
 #include "Wrapper.h"
 
-class IntWrapper : public Wrapper {
-
+class IntWrapper : public Wrapper{
 public:
-  IntWrapper(int val) : val(val) {}
-  virtual void push_back(IntWrapper* i);
+  IntWrapper(int value) : value(value) {}
+  virtual void print(std::ostream& os) override { os << value; }
 
 private:
-  int val;
+  int value;
 };

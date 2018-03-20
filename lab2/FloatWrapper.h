@@ -2,11 +2,10 @@
 #include "Wrapper.h"
 
 class FloatWrapper : public Wrapper {
-
 public:
-  FloatWrapper(float val) : val(val) {}
-  virtual void push_back(FloatWrapper* f);
+  FloatWrapper(float value) : value(value) {}
+  virtual void print(std::ostream& os) override { os << value; }
 
 private:
-  float val;
+  float value;
 };

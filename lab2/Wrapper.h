@@ -1,9 +1,8 @@
 #pragma once
-
-class PVec;
+#include <iostream>
 
 class Wrapper {
-  
 public:
-  virtual void push_back(PVec* elem);
+  virtual void print(std::ostream& os) {};
+private:
 };
