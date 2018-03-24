@@ -1,8 +1,6 @@
 #pragma once
 
-#include "Watched.h"
-
-class Watcher : public Watched {
+class Watcher {
 public:
 private:
 };

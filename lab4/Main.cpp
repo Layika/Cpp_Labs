@@ -46,7 +46,7 @@ private:
 
 int main() {
 
-  WatcherCounter couter1;
+  WatcherCounter counter1;
   WatcherCounter counter2;
   WatcherPrinter printer1;
 
