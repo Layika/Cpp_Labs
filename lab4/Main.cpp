@@ -57,7 +57,7 @@ int main() {
   du.readData(2018);
   du.readData(9);
   du.readData(1);
-/*
+
   std::cout << "\ngenerator1\n";
   Generator generator1(0);
   generator1.addWatcher(&counter2);
@@ -75,7 +75,7 @@ int main() {
 
 
   std::cout << generator2.next() << " " << generator2.next() << std::endl;
-  std::cout << "sumy " << counter1.suma() << " " << counter2.suma() << std::endl;*/
+  std::cout << "sums " << counter1.sum() << " " << counter2.sum() << std::endl;
 
 }
 /* wynik
