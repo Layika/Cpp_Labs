@@ -9,10 +9,12 @@ List::List(const List& oldList) {
 
 
 List::~List() {
-	Data* iterator;
-	for (iterator=*head; iterator; iterator=iterator->next)
-		delete iterator;
-	delete head;
+	if (head) {
+		Data* iterator;
+		for (iterator=*head; iterator; iterator=iterator->next)
+			delete iterator;
+		delete head;
+	}
 }
 
 
@@ -54,12 +56,12 @@ void List::print() const {
 }
 
 
-bool List::find(Data data) const {
-	bool found = false;
-	Data* iterator;
-	for (iterator=*head; iterator; iterator=iterator->next) {
-		if (found) break;
-		found = data.cmp(iterator);
+bool List::find(const Data& data) const {
+	if (!head) return false;
+	else {
+		Data* iterator;
+		for (iterator=*head; iterator; iterator=iterator->next)
+			if(iterator->cmp(data)) return true;
 	}
-	return found;
+	return false;
 }

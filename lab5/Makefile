@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-ggdb -c -Wall
+CXXFLAGS=-ggdb -c -Wall -std=c++11
 SOURCES=$(wildcard *.cpp)
 H_FILES=$(wildcard *.h)
 OBJECTS=$(SOURCES:.cpp=.o)
