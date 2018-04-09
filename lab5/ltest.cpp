@@ -33,7 +33,7 @@ int main() {
   bool found = l.find( IntData(7) );
   std::cout << " found " << found << std::endl;
   found = l.find( StringData("7") );
-  std::cout << " found " << found << std::end;l
+  std::cout << " found " << found << std::endl;
 
 }
 /* wyniki

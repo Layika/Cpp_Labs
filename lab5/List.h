@@ -11,12 +11,13 @@ class List {
 public:
 	List() {}
 	List(const List& oldList);
+	~List();
 
 	void insert(const Data& data, bool where);
 	List& insert(const Data& data);
 	void print() const;
-	
-	bool find(const Data& data) const;
+
+	bool find(Data data) const;
 
 	const static bool Begin = true;
 	const static bool End = false;

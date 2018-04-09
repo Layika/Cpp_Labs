@@ -8,6 +8,14 @@ List::List(const List& oldList) {
 }
 
 
+List::~List() {
+	Data* iterator;
+	for (iterator=*head; iterator; iterator=iterator->next)
+		delete iterator;
+	delete head;
+}
+
+
 void List::insert(const Data& data, bool where) {
 	Data* toAdd = data.clone();
 
@@ -46,7 +54,7 @@ void List::print() const {
 }
 
 
-bool find(const Data& data) const {
+bool List::find(Data data) const {
 	bool found = false;
 	Data* iterator;
 	for (iterator=*head; iterator; iterator=iterator->next) {
