@@ -18,7 +18,7 @@ int main() {
   a.insert(IntData(11), List::End); // na koniec
   a.insert(StringData("Hello"),  List::Begin); // znow na poczatek
   a.insert(StringData("Kasia"), List::End);
-  /*a.insert(IntData(7)).insert(FloatData(0.3)); // po wyniki mozna poznac gdzie dodane sa elementy
+  a.insert(IntData(7)).insert(FloatData(0.3)); // po wyniki mozna poznac gdzie dodane sa elementy
 
   a.print();
 
@@ -27,7 +27,7 @@ int main() {
   std::cout << "Lista a" << std::endl;
   a.print();
   std::cout << "Lista b" << std::endl;
-  b.print();*/
+  b.print();
   // tu uruchamiaja sie destruktory
 
   // dla tych co sie nudza na zajeciach, (lub zad domowe)

@@ -13,22 +13,23 @@ List::List(const List& oldList) {
 
 
 void List::insert(const Data& data, bool where) {
-	Data toAdd = data;
+	Data* toAdd = new Data;
+	*toAdd = data;
 
 	if (!head) {
 		head = new Data*;
-		*head = &toAdd;
+		*head = toAdd;
 	}
 
 	else if (where == Begin) {
-		toAdd.next = *head;
-		*head = &toAdd;
+		toAdd->next = *head;
+		*head = toAdd;
 	}
 
  else if (where == End) {
 	 Data* next = *head;
 	 for (unsigned int i=0; i<size-1; ++i) next = next->next;
-	 next->next = &toAdd;
+	 next->next = toAdd;
  }
 
 	size += 1;
@@ -36,21 +37,7 @@ void List::insert(const Data& data, bool where) {
 
 
 List& List::insert( const Data& data) {
-	Data toAdd = data;
-
-	if (!head) {
-		head = new Data*;
-		*head = &toAdd;
-	}
-
-	else  {
- 	 Data* next = *head;
- 	 for (unsigned int i=0; i<size-1; ++i) next = next->next;
- 	 next->next = &toAdd;
-  }
-
-	size += 1;
-
+	insert(data, End);
 	return *this;
 }
 
