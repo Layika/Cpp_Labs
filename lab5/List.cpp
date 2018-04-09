@@ -2,12 +2,9 @@
 
 
 List::List(const List& oldList) {
-	size = oldList.getSize();
-	Data* iterator = *(oldList.head);
-	for (unsigned int i=0; i<size; ++i) {
-		iterator = iterator->next;
+	Data* iterator;
+	for (iterator=*(oldList.head); iterator->next; iterator=iterator->next);
 		this->insert(*(iterator->clone()));
-	}
 }
 
 
@@ -25,12 +22,10 @@ void List::insert(const Data& data, bool where) {
 	}
 
  else if (where == End) {
-	 Data* next = *head;
-	 for (unsigned int i=0; i<size-1; ++i) next = next->next;
+	 Data* next;
+	 for(next=*head; next->next; next=next->next);
 	 next->next = toAdd;
  }
-
-	size += 1;
 }
 
 
@@ -43,11 +38,9 @@ List& List::insert( const Data& data) {
 void List::print() const {
 	std::cout << "[ ";
 
-	Data* iterator = *head;
-	for (unsigned int i=0; i<getSize(); ++i) {
+	Data* iterator;
+	for (iterator=*head; iterator->next; iterator=iterator->next)
 		iterator->print();
-		if (iterator->next) iterator = iterator->next;
-	}
 
 	std::cout << "]" << std::endl;
 }
