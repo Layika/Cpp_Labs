@@ -7,6 +7,7 @@ class FloatData : public Data {
 public:
 	FloatData(float val) : val(val) {}
 	FloatData(const FloatData& data) : val(data.getData()) {}
+	FloatData* clone() const { return new FloatData(*this); }
 
 	float getData() const { return val; }
 	~FloatData() { std::cout << "~FloatData()" << std::endl; }

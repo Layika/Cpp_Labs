@@ -9,7 +9,8 @@ public:
 	StringData(std::string str) : str(str) {}
 	~StringData() { std::cout << "~StringData()" << std::endl; }
 	StringData(const StringData& data) : str(data.getData()) {}
-
+	StringData* clone() const { return new StringData(*this); }
+	
 	std::string getData() const { return str; }
 	virtual void print() const { std::cout << str << " "; }
 

@@ -13,8 +13,7 @@ List::List(const List& oldList) {
 
 
 void List::insert(const Data& data, bool where) {
-	Data* toAdd = new Data;
-	*toAdd = data;
+	Data* toAdd = data.clone();
 
 	if (!head) {
 		head = new Data*;
