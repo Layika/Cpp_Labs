@@ -8,7 +8,7 @@ public:
 	FloatData(float val) : val(val) {}
 	FloatData(const FloatData& data) : val(data.getData()) {}
 	FloatData* clone() const { return new FloatData(*this); }
-	virtual bool cmp(const FloatData& toCmp) const { if (this->val == toCmp.val) return true; else return false; } 
+	bool cmp(Data& other) const;
 
 	float getData() const { return val; }
 	~FloatData() { std::cout << "~FloatData()" << std::endl; }

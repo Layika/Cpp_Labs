@@ -10,7 +10,7 @@ public:
 	~StringData() { std::cout << "~StringData()" << std::endl; }
 	StringData(const StringData& data) : str(data.getData()) {}
 	StringData* clone() const { return new StringData(*this); }
-	virtual bool cmp(const StringData& toCmp) const { if (this->str == toCmp.str) return true; else return false; } 
+	bool cmp(Data& other) const;
 
 	std::string getData() const { return str; }
 	virtual void print() const { std::cout << str << " "; }
