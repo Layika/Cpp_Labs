@@ -29,11 +29,11 @@ int main() {
   b.print();
   // tu uruchamiaja sie destruktory
 
-  // dla tych co sie nudza na zajeciach, (lub zad domowe)
-  // bool found = l.find( IntData(7) );
-  // std::cout << " found " << found << std::endl;
-  // found = l.find( StringData("7") );
-  // std::cout << " found " << found << std::end;l
+  List l;
+  bool found = l.find( IntData(7) );
+  std::cout << " found " << found << std::endl;
+  found = l.find( StringData("7") );
+  std::cout << " found " << found << std::end;l
 
 }
 /* wyniki

@@ -15,6 +15,8 @@ public:
 	void insert(const Data& data, bool where);
 	List& insert(const Data& data);
 	void print() const;
+	
+	bool find(const Data& data) const;
 
 	const static bool Begin = true;
 	const static bool End = false;

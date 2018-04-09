@@ -3,7 +3,7 @@
 
 List::List(const List& oldList) {
 	Data* iterator;
-	for (iterator=*(oldList.head); iterator->next; iterator=iterator->next);
+	for (iterator=*(oldList.head); iterator; iterator=iterator->next)
 		this->insert(*(iterator->clone()));
 }
 
@@ -23,7 +23,7 @@ void List::insert(const Data& data, bool where) {
 
  else if (where == End) {
 	 Data* next;
-	 for(next=*head; next->next; next=next->next);
+	 for (next=*head; next->next; next=next->next);
 	 next->next = toAdd;
  }
 }
@@ -39,8 +39,19 @@ void List::print() const {
 	std::cout << "[ ";
 
 	Data* iterator;
-	for (iterator=*head; iterator->next; iterator=iterator->next)
+	for (iterator=*head; iterator; iterator=iterator->next)
 		iterator->print();
 
 	std::cout << "]" << std::endl;
+}
+
+
+bool find(const Data& data) const {
+	bool found = false;
+	Data* iterator;
+	for (iterator=*head; iterator; iterator=iterator->next) {
+		if (found) break;
+		found = data.cmp(iterator);
+	}
+	return found;
 }
