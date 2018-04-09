@@ -14,7 +14,6 @@ int main() {
   List a;
 
   a.insert(IntData(10), List::Begin); // wkladamy na poczatek
-  a.print();
   a.insert(IntData(11), List::End); // na koniec
   a.insert(StringData("Hello"),  List::Begin); // znow na poczatek
   a.insert(StringData("Kasia"), List::End);

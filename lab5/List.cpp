@@ -5,9 +5,8 @@ List::List(const List& oldList) {
 	size = oldList.getSize();
 	Data* iterator = *(oldList.head);
 	for (unsigned int i=0; i<size; ++i) {
-		Data toInsert = *iterator;
 		iterator = iterator->next;
-		this->insert(toInsert);
+		this->insert(*(iterator->clone()));
 	}
 }
 
