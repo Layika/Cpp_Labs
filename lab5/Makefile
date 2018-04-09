@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-g -c -Wall
+CXXFLAGS=-ggdb -c -Wall
 SOURCES=$(wildcard *.cpp)
 H_FILES=$(wildcard *.h)
 OBJECTS=$(SOURCES:.cpp=.o)

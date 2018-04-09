@@ -9,8 +9,10 @@
 
 class List {
 public:
-	List() {}
+	List() : size(0) {}
 	List(const List& oldList);
+
+	unsigned int getSize() const { return size; }
 
 	void insert(const Data& data, bool where);
 	List& insert(const Data& data);
@@ -23,6 +25,6 @@ private:
 	std::vector<const Data*> list;
 	std::vector<const Data*>::iterator it;
 
-	Data* head = NULL;
+	Data** head = NULL;
+	unsigned int size;
 };
-

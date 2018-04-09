@@ -4,12 +4,6 @@
 
 class Data {
 public:
-	virtual void print() const {} 
-
-private:
+	virtual void print() const {}
 	Data* next = NULL;
-	Data* prev = NULL;
-	unsigned int size;
 };
-
-// std::ostream& operator<<(std::ostream& os, const Data data);
