@@ -11,7 +11,7 @@ Executor::Result Executor::secureRun(const Function& function, double x) {
 
   try { r.value = function(x); }
 
-  catch(std::string error) {
+  catch(const char* error) {
     r.valid = 0;
     std::cout << "ERROR " << error << std::endl;
   }
