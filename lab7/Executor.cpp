@@ -9,20 +9,21 @@ Executor::Result Executor::secureRun(const Function& function, double x) {
 
   Result r;
 
+  r.valid = 1;
+
   try { r.value = function(x); }
 
   catch(const char* error) {
     r.valid = 0;
-    std::cout << "ERROR " << error << std::endl;
+    std::cout << "ERROR " << error;
   }
 
   catch(bool error) {
     r.valid = 0;
     std::cout << "ERROR Boolean of value ";
-    if (error) std::cout <<  "true thrown" << std::endl;
-    else std::cout << "false thrown" << std::endl;
+    if (error) std::cout <<  "true thrown";
+    else std::cout << "false thrown";
   }
 
-  r.valid = 1;
   return r;
 }
