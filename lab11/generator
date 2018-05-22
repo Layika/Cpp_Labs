@@ -1,0 +1,38 @@
+#pragma once
+
+template<typename T>
+// Template class for generator
+class generator {
+public:
+	// Typedef for function
+	using FunctionType = T(T);
+
+	// Generator's constructor setting starting values
+	generator(T startVal, FunctionType* fun) : startVal(startVal), currVal(startVal), fun(fun) {}
+
+	// Function returning currentVal
+	T current() { return currVal; }
+
+	// Function resetting generator's state to another starting state given in arguments
+	void reset(T newVal, FunctionType* newFun) { currVal = newVal; fun = newFun; }
+
+	// Function resetting generator's state to starting state
+	void reset() { currVal = startVal; }
+
+	// Function counting next currentVal using saved function
+	T next() { return (currVal = fun(currVal));}
+
+
+	// Overloading prefix ++ operator
+	void operator++() { next(); }
+
+	// Overloading > and < operators to be able to compare generator with T value
+	bool operator> (T cmp) { return currVal > cmp; }
+	bool operator< (T cmp) { return currVal < cmp; }
+
+private:
+	// Generator's saved fields
+	T startVal;
+	T currVal;
+	FunctionType* fun;
+};
